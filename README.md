@@ -1,6 +1,6 @@
-# Welcome to Your Miaoda Project
+# Welcome to Your SkillLogic Project
 Miaoda Application Link URL
-    URL:https://medo.dev/projects/app-83zunkcdsa9t
+    URL:Skilllogic.in
 
 # Welcome to Your Miaoda Project
 
