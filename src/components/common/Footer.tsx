@@ -28,13 +28,15 @@ export default function Footer() {
     <footer className="border-t bg-muted">
       <div className="container py-12">
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+
+          {/* ---------- LOGO + DESCRIPTION ---------- */}
           <div>
             <div className="mb-4 flex items-center gap-3">
-              <img
-                src="https://miaoda-conversation-file.s3cdn.medo.dev/user-83ywl6oriznk/20251209/file-83zsqq5kaubk.jpg"
-                alt="Aarambh Hospital"
-                className="h-12 w-auto"
-              />
+              {/* Placeholder Logo */}
+              <div className="h-12 w-12 rounded bg-gray-200 flex items-center justify-center text-xs text-gray-500">
+                Logo
+              </div>
+
               <div>
                 <h3 className="text-lg font-bold text-primary">Aarambh</h3>
                 <p className="text-xs text-muted-foreground">
@@ -42,44 +44,29 @@ export default function Footer() {
                 </p>
               </div>
             </div>
+
             <p className="mb-4 text-sm text-muted-foreground">
               {t(
                 'Providing world-class healthcare with compassion and excellence.',
                 'करुणा और उत्कृष्टता के साथ विश्व स्तरीय स्वास्थ्य सेवा प्रदान करना।'
               )}
             </p>
+
+            {/* ---------- SOCIAL ICONS ---------- */}
             <div className="flex gap-3">
-              <a
-                href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-primary/90"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-primary/90"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-4 w-4" />
-              </a>
-              <a
-                href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-primary/90"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a
-                href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-primary/90"
-                aria-label="Youtube"
-              >
-                <Youtube className="h-4 w-4" />
-              </a>
+              {[Facebook, Twitter, Instagram, Youtube].map((Icon, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-primary/90"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
 
+          {/* ---------- QUICK LINKS ---------- */}
           <div>
             <h3 className="mb-4 text-lg font-semibold">
               {t('Quick Links', 'त्वरित लिंक')}
@@ -98,6 +85,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* ---------- SERVICES ---------- */}
           <div>
             <h3 className="mb-4 text-lg font-semibold">
               {t('Services', 'सेवाएं')}
@@ -116,10 +104,12 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* ---------- CONTACT INFO ---------- */}
           <div>
             <h3 className="mb-4 text-lg font-semibold">
               {t('Contact Info', 'संपर्क जानकारी')}
             </h3>
+
             <ul className="space-y-3">
               <li className="flex gap-3 text-sm text-muted-foreground">
                 <MapPin className="h-5 w-5 flex-shrink-0 text-primary" />
@@ -130,6 +120,7 @@ export default function Footer() {
                   )}
                 </span>
               </li>
+
               <li className="flex gap-3 text-sm text-muted-foreground">
                 <Phone className="h-5 w-5 flex-shrink-0 text-primary" />
                 <div>
@@ -139,10 +130,12 @@ export default function Footer() {
                   </p>
                 </div>
               </li>
+
               <li className="flex gap-3 text-sm text-muted-foreground">
                 <Mail className="h-5 w-5 flex-shrink-0 text-primary" />
                 <span>info@aarambhhospital.com</span>
               </li>
+
               <li className="flex gap-3 text-sm text-muted-foreground">
                 <Clock className="h-5 w-5 flex-shrink-0 text-primary" />
                 <span>{t('24/7 Emergency Services', '24/7 आपातकालीन सेवाएं')}</span>
@@ -151,8 +144,9 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* ---------- COPYRIGHT ---------- */}
         <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>2025 Aarambh Heart & Multi-Speciality Hospital</p>
+          <p>© {currentYear} Aarambh Heart & Multi-Speciality Hospital</p>
         </div>
       </div>
     </footer>

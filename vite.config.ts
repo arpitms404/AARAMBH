@@ -1,14 +1,17 @@
 import { defineConfig } from "vite";
-import { miaodaDevPlugin } from "miaoda-sc-plugin";
 import react from "@vitejs/plugin-react";
 import svgr from "vite-plugin-svgr";
+import { miaodaDevPlugin } from "miaoda-sc-plugin";
 import path from "path";
+import { fileURLToPath } from "url";
 
-// https://vite.dev/config/
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 export default defineConfig({
   plugins: [
     react(),
-    miaodaDevPlugin(),
+    // Fix invalid plugin typing
+    miaodaDevPlugin() as any,
     svgr({
       svgrOptions: {
         icon: true,
@@ -19,7 +22,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "src"),
     },
   },
 });
